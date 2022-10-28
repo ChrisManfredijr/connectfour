@@ -20,6 +20,9 @@
     padding: 20px;
     font-size: 30px;
     font-family: connectBold;
+    display: flex;
+    justify-content: space-between;
+    cursor:pointer;
 }
 
 .player {
