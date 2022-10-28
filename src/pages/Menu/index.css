@@ -1,0 +1,35 @@
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.menuBox {
+    background-color: var(--main-bg-color);
+    padding:30px;
+    height:600px;
+    width: 500px;
+   
+}
+
+.selectBox {
+    border-radius: 15px;
+    margin-top: 10px;
+    text-align: start;
+    padding: 20px;
+    font-size: 30px;
+    font-family: connectBold;
+}
+
+.player {
+    background-color: var(--main-player-color);
+}
+
+.cpu {
+    background-color: var(--main-second-color);
+}
+
+.rules {
+    background-color: #f4f4f4;
+}
