@@ -7,7 +7,7 @@ const Game = () => {
     }, [])
     
   const [column, setColumn] = useState(0);
-  const [playerTurn, setPlayerTurn] = useState('P1')
+  const [playerTurn, setPlayerTurn] = useState('P1');
   const [board, setBoard] = useState( [0, 0, 0, 0, 0, 0, 0,
                                       0, 0, 0, 0, 0, 0, 0, 
                                       0, 0, 0, 0, 0, 0, 0,
@@ -137,9 +137,34 @@ const Game = () => {
           }
         }
       }
-      //diagnoal wincheck middle to bottom left
+      //diagonal wincheck middle to bottom left
+      for(let d = 0; d<=5; d++){
+        let count = 0;
+        
+        for(let i = 5; i>=d; i--){
+           if(newBoard[(8 * i) - d] === piece){
+            count++;
+             if(count === 4){
+              console.log("win")
+              gameReset();
+              return;
+             }
+          }else{
+            count = 0;
+          }
+        }
+      }
   }
+
+
   function gameReset() {
+      const blankBoard = [0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0,];
+        setBoard(blankBoard);
 
   };
   function increment() {
