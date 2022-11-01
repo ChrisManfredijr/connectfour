@@ -61,10 +61,10 @@ const Game = () => {
         let count = 0; 
         for(let i=0; i <= 5; i++){
             if(newBoard[c + (i * 7)] === piece){
-              console.log("test");
               count++;
               if(count === 4){
                 console.log("win!");
+                gameReset();
                 return;
               }
             }else{
@@ -74,7 +74,21 @@ const Game = () => {
       }
 
       //horizontal wincheck
-
+      for(let r=0; r <= 5; r++){
+        let count = 0;
+        for(let i=0; i<=6; i++) {
+          if(newBoard[(r * 7) + i] === piece){
+            count++;
+              if(count === 4){
+                console.log("win");
+                gameReset();
+                return;
+              }
+          }else{
+            count = 0;
+          }
+        }
+      }
       //diagonal wincheck top right to middle
       
       //diagonal wincheck middle to bottom left
@@ -83,7 +97,9 @@ const Game = () => {
 
       //diagnoal wincheck middle to bottom right
   }
+  function gameReset() {
 
+  };
   function increment() {
       if(column < 6){
         setColumn(prevColumn => prevColumn + 1);
