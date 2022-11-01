@@ -57,8 +57,20 @@ const Game = () => {
   //checks to see if piece is winning piece
   function checkWin(newBoard, slotIndex, piece) {
       //vertical wincheck
-      for(let i=0; i <= 6; i++){
-         console.log(i);
+      for(let c=0; c <= 6; c++){
+        let count = 0; 
+        for(let i=0; i <= 5; i++){
+            if(newBoard[c + (i * 7)] === piece){
+              console.log("test");
+              count++;
+              if(count === 4){
+                console.log("win!");
+                return;
+              }
+            }else{
+              count = 0;
+            }
+         }
       }
 
       //horizontal wincheck
