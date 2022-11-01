@@ -89,13 +89,55 @@ const Game = () => {
           }
         }
       }
-      //diagonal wincheck top right to middle
-      
-      //diagonal wincheck middle to bottom left
-
-      //diagonal wincheck top left to middle, 
-
-      //diagnoal wincheck middle to bottom right
+      //diagonal wincheck top left to middle
+      for(let d=0; d <= 5; d++){
+        let count = 0;
+        for(let i=0; i<=d; i++){
+            if(newBoard[d +(i *6)] === piece){
+              count++;
+               if(count === 4){
+                console.log("win")
+                gameReset();
+                return;
+               }
+            }else{
+              count = 0;
+            }
+        }
+      };
+      //diagonal wincheck middle to bottom right
+      for(let d = 0; d <= 5; d++){
+        let count = 0;
+        for(let i = 5; i>=d; i--){
+            if(newBoard[(6 + d) + (6*i)] === piece){
+              count++;
+               if(count === 4){
+                console.log("win")
+                gameReset();
+                return;
+               }
+            }else{
+              count = 0;
+            }
+        }
+      }
+      //diagonal wincheck top right to middle, 
+      for(let d = 0; d<=5; d++){
+        let count = 0;
+        for(let i = 0; i<=d; i++){
+           if(newBoard[(6-d) +(8 * i)] === piece){
+            count++;
+             if(count === 4){
+              console.log("win")
+              gameReset();
+              return;
+             }
+          }else{
+            count = 0;
+          }
+        }
+      }
+      //diagnoal wincheck middle to bottom left
   }
   function gameReset() {
 
