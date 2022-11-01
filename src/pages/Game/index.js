@@ -3,78 +3,75 @@ import {useState, useReducer} from 'react';
 
 const Game = () => {
   useEffect(() => {
-      start();
+      
     }, [])
     
   const [column, setColumn] = useState(0);
   const [playerTurn, setPlayerTurn] = useState('P1')
-
-  function reducer(state, action){
-    switch (action.type) {
-      case 'playerOne':
-        return;
-      case 'playerTwo':
-        return;
-      case 'start':
-        return;
-      case 'reset':
-        return; 
-      
-    }
-  }
-
-  function start(){
-    dispatch({type: 'start'});
-  }
+  const [board, setBoard] = useState( [0, 0, 0, 0, 0, 0, 0,
+                                      0, 0, 0, 0, 0, 0, 0, 
+                                      0, 0, 0, 0, 0, 0, 0,
+                                      0, 0, 0, 0, 0, 0, 0, 
+                                      0, 0, 0, 0, 0, 0, 0,
+                                      0, 0, 0, 0, 0, 0, 0,])
   
-  const [state, dispatch] = useReducer(reducer, 
-    {
-      board: [0, 0, 0, 0, 0, 0, 0,
-              0, 0, 0, 0, 0, 0, 0, 
-              0, 0, 0, 0, 0, 0, 0,
-              0, 0, 0, 0, 0, 0, 0, 
-              0, 0, 0, 0, 0, 0, 0,
-              0, 0, 0, 0, 0, 0, 0,],
-      playerOne: 1,
-      playerTwo: 2,
-      playerOneScore: 0,
-      playerTwoScore: 0,
-    }
-    
-    );
   
-  //test board
-  var board = [0, 0, 0, 0, 0, 0, 0,
-                 0, 0, 0, 0, 0, 0, 0, 
-                 0, 0, 0, 0, 0, 0, 0,
-                 0, 0, 0, 0, 0, 0, 0, 
-                 0, 0, 0, 0, 0, 0, 0,
-                 0, 0, 0, 0, 0, 0, 0,];
-
+  
   //game logic
-  
-
   function dropPiece(){
-      for(let i = 5; i >= 0; i--){
-          if(board[(i*7) + column] === 0){
+    for(let i = 5; i >= 0; i--){
+        if(board[(i*7) + column] === 0){
+              let slotIndex = (i*7) + column;
               if(playerTurn === 'P1'){
-                  board[(i*7) + column] = 1;
-                  setPlayerTurn('P2');
-                  console.log(board);
+                updateBoard(slotIndex, 1);
+                setPlayerTurn('P2');
+                
+                 
               }else if(playerTurn === 'P2'){
-                  board[(i*7) + column] = 2;
-                  setPlayerTurn('P1');
-                  console.log(board);
+                updateBoard(slotIndex, 2)  
+                setPlayerTurn('P1'); 
+               
               }
-              checkWin();
+              return;
+
+          }else if(board[column] != 0){
+              console.log("column full");
               return;
           }
+      
       }
   }
-
-  function checkWin() {
-      
+  //updates the boards state
+  const updateBoard = (slotIndex, piece) => {
+    const newBoard = board.map((s, i) => {
+      if(i === slotIndex) {
+        return piece;
+      }
+      return s;
+    });
+    setBoard(newBoard);
+    checkWin(newBoard, slotIndex, piece);
+    console.log(newBoard);
   }
+
+  //checks to see if piece is winning piece
+  function checkWin(newBoard, slotIndex, piece) {
+      //vertical wincheck
+      for(let i=0; i <= 6; i++){
+         console.log(i);
+      }
+
+      //horizontal wincheck
+
+      //diagonal wincheck top right to middle
+      
+      //diagonal wincheck middle to bottom left
+
+      //diagonal wincheck top left to middle, 
+
+      //diagnoal wincheck middle to bottom right
+  }
+
   function increment() {
       if(column < 6){
         setColumn(prevColumn => prevColumn + 1);
