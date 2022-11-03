@@ -4,8 +4,7 @@ import Menu from './pages/Menu';
 import Game from './pages/Game';
 function App() {
   return (
-    <div className="App">
-        
+    <div className="App">        
         <Game/>
     </div>
   );

@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import {useState, useReducer} from 'react';
+import {useState} from 'react';
+import Board from '../../components/Board';
 
 const Game = () => {
   useEffect(() => {
@@ -34,7 +35,7 @@ const Game = () => {
               }
               return;
 
-          }else if(board[column] != 0){
+          }else if(board[column] !== 0){
               console.log("column full");
               return;
           }
@@ -181,9 +182,9 @@ const Game = () => {
   
   return (
     <div className='Game'>
-          <button onClick={decrement}>left</button><h1>{column}</h1><button onClick={increment}>right</button><button onClick={dropPiece}>submit</button>
+      <Board boardArray={board}/>
     </div>
   )
 }
-
+//<button onClick={decrement}>left</button><h1>{column}</h1><button onClick={increment}>right</button><button onClick={dropPiece}>submit</button>
 export default Game

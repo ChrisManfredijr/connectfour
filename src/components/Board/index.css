@@ -1,0 +1,27 @@
+.Board {
+    display: flex;
+    justify-content: center;
+}
+
+.BoardTop {
+    position: absolute;
+    z-index: 1;
+}
+.grid{
+    position: absolute;
+    width:605px;
+    height:535px;
+    display: flex;
+    flex-wrap:wrap;
+    z-index: 2;
+}
+.slot{
+    width:70px;
+    height:70px;
+    padding:7px;
+    
+    border: 1px red solid;
+}
+.BoardBottom{
+    z-index: -1;
+}
