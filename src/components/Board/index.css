@@ -21,8 +21,22 @@
     height:70px;
     padding:7px;
     
-    border: 1px purple solid;
+    border: 1px #5c2cd5 solid;
 }
 .BoardBottom{
     z-index: -1;
+}
+
+.fall {
+    animation-name: fall-animation;
+    animation-duration: 500ms;
+}
+
+@keyframes fall-animation {
+    from {
+        transform: translateY(-500px);
+    }
+    to {
+        transform: translateY(0);
+    }
 }

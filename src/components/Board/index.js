@@ -12,19 +12,19 @@ const Board = (props) => {
         if(slot == 1){
             return (
                 <div className='slot'>  
-                    <CounterRedLarge/>   
+                    <CounterRedLarge className='fall'/>   
                 </div> 
             );
         }else if(slot == 2){
             return (
                 <div className='slot'>
-                    <CounterYellowLarge/>
+                    <CounterYellowLarge className='fall'/>
                 </div>
             );
         }else{
             return (
                 <div className='slot'>
-                    
+
                 </div>
             );
         };
