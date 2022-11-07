@@ -7,23 +7,23 @@ import {ReactComponent as CounterYellowLarge} from '../../assets/images/counter-
 
 const Board = (props) => {
     const board = props.boardArray;
-    const grid = board.map((slot) => 
+    const grid = board.map((slot, index) => 
     {
         if(slot == 1){
             return (
-                <div className='slot'>  
+                <div className='slot' key={index}>  
                     <CounterRedLarge className='fall'/>   
                 </div> 
             );
         }else if(slot == 2){
             return (
-                <div className='slot'>
+                <div className='slot' key={index}>
                     <CounterYellowLarge className='fall'/>
                 </div>
             );
         }else{
             return (
-                <div className='slot'>
+                <div className='slot' key={index}>
 
                 </div>
             );

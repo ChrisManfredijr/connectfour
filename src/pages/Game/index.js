@@ -2,11 +2,30 @@ import React, { useEffect } from 'react';
 import {useState} from 'react';
 import Board from '../../components/Board';
 
+
 const Game = () => {
   useEffect(() => {
-      
-    }, [])
-    
+     window.addEventListener("keydown", handler)
+
+     return () => {
+      window.removeEventListener("keydown", handler)
+     }
+    })
+  
+  function handler(event) {
+    switch(event.key) {
+      case 'ArrowDown':
+        dropPiece();
+        break;
+      case 'ArrowRight':
+        increment();
+        break;
+      case 'ArrowLeft':
+        decrement();
+        break;
+    }
+  };
+  
   const [column, setColumn] = useState(0);
   const [playerTurn, setPlayerTurn] = useState('P1');
   const [board, setBoard] = useState( [0, 0, 0, 0, 0, 0, 0,
@@ -16,10 +35,12 @@ const Game = () => {
                                       0, 0, 0, 0, 0, 0, 0,
                                       0, 0, 0, 0, 0, 0, 0,])
   
+
   
   
   //game logic
   function dropPiece(){
+    
     for(let i = 5; i >= 0; i--){
         if(board[(i*7) + column] === 0){
               let slotIndex = (i*7) + column;
@@ -36,7 +57,7 @@ const Game = () => {
               return;
 
           }else if(board[column] !== 0){
-              console.log("column full");
+              
               return;
           }
       
@@ -52,7 +73,7 @@ const Game = () => {
     });
     setBoard(newBoard);
     checkWin(newBoard, slotIndex, piece);
-    console.log(newBoard);
+   
   }
 
   //checks to see if piece is winning piece
@@ -184,6 +205,7 @@ const Game = () => {
     
     <div className='Game'>
       <button onClick={decrement}>left</button><h1>{column}</h1><button onClick={increment}>right</button><button onClick={dropPiece}>submit</button>
+   
       <Board boardArray={board}/>
     </div>
   )

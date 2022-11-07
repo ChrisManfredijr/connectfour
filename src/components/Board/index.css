@@ -35,8 +35,10 @@
 @keyframes fall-animation {
     from {
         transform: translateY(-500px);
+        
     }
     to {
         transform: translateY(0);
+        
     }
 }
