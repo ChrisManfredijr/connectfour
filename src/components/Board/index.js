@@ -4,9 +4,40 @@ import {ReactComponent as BoardTop} from '../../assets/images/board-layer-white-
 import {ReactComponent as BoardBottom} from '../../assets/images/board-layer-black-large.svg';
 import {ReactComponent as CounterRedLarge} from '../../assets/images/counter-red-large.svg';
 import {ReactComponent as CounterYellowLarge} from '../../assets/images/counter-yellow-large.svg';
+import { ReactComponent as MarkerRed} from '../../assets/images/marker-red.svg';
+import {ReactComponent as MarkerYellow} from '../../assets/images/marker-yellow.svg';
+
 
 const Board = (props) => {
     const board = props.boardArray;
+    const columnNumber = props.columnPosition;
+    const playerTurn = props.playerTurn;
+
+    const column = [0,1,2,3,4,5,6,];
+    console.log(props.column);
+    const columnGrid = column.map((index) => {
+        if(columnNumber === index){
+            if(playerTurn === 'P1'){
+                return (
+                <div className='columnSlot'key={index}>
+                    <MarkerRed/>
+                </div>
+                );
+            }else if(playerTurn === 'P2'){
+                return(
+                <div className='columnSlot' key={index}>
+                    <MarkerYellow/>
+                </div>
+
+                );
+            }
+            
+        }else{
+            return (
+                <div className='columnSlot' key={index}></div>
+            );
+        }
+    })
     const grid = board.map((slot, index) => 
     {
         if(slot == 1){
@@ -29,12 +60,14 @@ const Board = (props) => {
             );
         };
     });
+
     
     return (  
     <div className='Board'>
-        <BoardTop className='BoardTop'/>
-        <div className='grid'>{grid}</div>
-        <BoardBottom className='BoardBottom'/>
+            <div className='markerGrid'>{columnGrid}</div>
+            <BoardTop className='BoardTop'/>
+            <div className='grid'>{grid}</div>
+            <BoardBottom className='BoardBottom'/>
     </div>
   )
 }

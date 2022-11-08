@@ -18,8 +18,8 @@
   font-family: connectBold;
   src: url(./assets/fonts/static/SpaceGrotesk-Bold.ttf);
 }
+
 body {
-  
   margin: 0;
   font-family: connectLight;
   -webkit-font-smoothing: antialiased;

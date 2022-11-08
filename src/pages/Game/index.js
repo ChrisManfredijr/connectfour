@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import {useState} from 'react';
 import Board from '../../components/Board';
-
+import './index.css';
 
 const Game = () => {
   useEffect(() => {
@@ -204,9 +204,7 @@ const Game = () => {
   return (
     
     <div className='Game'>
-      <button onClick={decrement}>left</button><h1>{column}</h1><button onClick={increment}>right</button><button onClick={dropPiece}>submit</button>
-   
-      <Board boardArray={board}/>
+      <Board boardArray={board} columnPosition={column} playerTurn={playerTurn}/>
     </div>
   )
 }
