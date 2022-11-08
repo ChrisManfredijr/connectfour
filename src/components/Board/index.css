@@ -42,15 +42,14 @@
 .markerGrid{
     position: absolute;
     width:620px;
-    border: 1px black solid;
     height:50px;
-    margin-bottom: 650px;
+    margin-bottom: 630px;
     display: flex;
 }
 .columnSlot{
     height:45px;
     width: 100px;
-    border:1px black solid;
+    
 }
 @keyframes fall-animation {
     from {
