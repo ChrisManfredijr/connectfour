@@ -77,20 +77,23 @@ const Game = () => {
   }
 
   //checks to see if piece is winning piece
-  function checkWin(newBoard, slotIndex, piece) {
+  function checkWin(newBoard, piece) {
       //vertical wincheck
       for(let c=0; c <= 6; c++){
-        let count = 0; 
+        let count = 0;
+        let winArray = []; 
         for(let i=0; i <= 5; i++){
             if(newBoard[c + (i * 7)] === piece){
               count++;
+              winArray.push(c+(i* 7));
               if(count === 4){
                 console.log("win!");
-                gameReset();
+                gameReset(winArray);
                 return;
               }
             }else{
               count = 0;
+              winArray = [];
             }
          }
       }
@@ -98,81 +101,98 @@ const Game = () => {
       //horizontal wincheck
       for(let r=0; r <= 5; r++){
         let count = 0;
+        let winArray = [];
         for(let i=0; i<=6; i++) {
           if(newBoard[(r * 7) + i] === piece){
             count++;
+            winArray.push((r*7) + i);
               if(count === 4){
                 console.log("win");
-                gameReset();
+                gameReset(winArray);
                 return;
               }
           }else{
             count = 0;
+            winArray = [];
           }
         }
       }
       //diagonal wincheck top left to middle
       for(let d=0; d <= 5; d++){
         let count = 0;
+        let winArray = [];
         for(let i=0; i<=d; i++){
             if(newBoard[d +(i *6)] === piece){
               count++;
+              winArray.push(d + (i*6));
                if(count === 4){
                 console.log("win")
-                gameReset();
+                gameReset(winArray);
                 return;
                }
             }else{
               count = 0;
+              winArray = [];
             }
         }
       };
       //diagonal wincheck middle to bottom right
       for(let d = 0; d <= 5; d++){
         let count = 0;
+        let winArray = [];
+
         for(let i = 5; i>=d; i--){
             if(newBoard[(6 + d) + (6*i)] === piece){
+              winArray.push((6 + d) + (6*i));
               count++;
                if(count === 4){
                 console.log("win")
-                gameReset();
+                gameReset(winArray);
                 return;
                }
             }else{
               count = 0;
+              winArray = [];
             }
         }
       }
       //diagonal wincheck top right to middle, 
       for(let d = 0; d<=5; d++){
         let count = 0;
+        let winArray = [];
+
         for(let i = 0; i<=d; i++){
            if(newBoard[(6-d) +(8 * i)] === piece){
+            winArray.push((6-d) +(8 * i));
             count++;
              if(count === 4){
               console.log("win")
-              gameReset();
+              gameReset(winArray);
               return;
              }
           }else{
             count = 0;
+            winArray = [];
           }
         }
       }
       //diagonal wincheck middle to bottom left
       for(let d = 0; d<=5; d++){
         let count = 0;
+        let winArray = [];
         
         for(let i = 5; i>=d; i--){
            if(newBoard[(8 * i) - d] === piece){
+            winArray.push((8*i) - d);
             count++;
              if(count === 4){
               console.log("win")
-              gameReset();
+              gameReset(winArray);
               return;
              }
           }else{
             count = 0;
+            winArray = [];
           }
         }
       }
@@ -204,9 +224,12 @@ const Game = () => {
   return (
     
     <div className='Game'>
+      <div className=''></div>
       <Board boardArray={board} columnPosition={column} playerTurn={playerTurn}/>
+      <div className='bottomTab'>
+      </div>
     </div>
   )
 }
-//
+
 export default Game

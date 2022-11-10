@@ -14,7 +14,7 @@ const Board = (props) => {
     const playerTurn = props.playerTurn;
 
     const column = [0,1,2,3,4,5,6,];
-    console.log(props.column);
+   
     const columnGrid = column.map((index) => {
         if(columnNumber === index){
             if(playerTurn === 'P1'){

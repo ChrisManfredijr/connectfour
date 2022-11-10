@@ -1,6 +1,19 @@
-
+.Game{
+    height:100vh;
+    background-color: var(--main-bg-color);
+}
 .gameBoard {
    display:flex;
    justify-content: center;
    align-items: center;
+}
+
+.bottomTab{
+    position: absolute;
+    background-color: var(--second-bg-color);
+    height:200px;
+    width: 100%;
+    bottom:0px;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
 }
