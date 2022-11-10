@@ -34,34 +34,35 @@ const Game = () => {
                                       0, 0, 0, 0, 0, 0, 0, 
                                       0, 0, 0, 0, 0, 0, 0,
                                       0, 0, 0, 0, 0, 0, 0,])
-  
-
+  const [win, setWin] = useState(false);
+  const [winningArray, setWinningArray] = ([]);
   
   
   //game logic
   function dropPiece(){
-    
-    for(let i = 5; i >= 0; i--){
-        if(board[(i*7) + column] === 0){
-              let slotIndex = (i*7) + column;
-              if(playerTurn === 'P1'){
-                updateBoard(slotIndex, 1);
-                setPlayerTurn('P2');
-                
-                 
-              }else if(playerTurn === 'P2'){
-                updateBoard(slotIndex, 2)  
-                setPlayerTurn('P1'); 
-               
-              }
-              return;
+    if(win !== true){
+      for(let i = 5; i >= 0; i--){
+          if(board[(i*7) + column] === 0){
+                let slotIndex = (i*7) + column;
+                if(playerTurn === 'P1'){
+                  updateBoard(slotIndex, 1);
+                  setPlayerTurn('P2');
 
-          }else if(board[column] !== 0){
-              
-              return;
-          }
-      
-      }
+                }else if(playerTurn === 'P2'){
+                  updateBoard(slotIndex, 2)  
+                  setPlayerTurn('P1'); 
+                 
+                }
+                return;
+  
+            }else if(board[column] !== 0){
+                
+                return;
+            }
+        
+        }
+
+    }
   }
   //updates the boards state
   const updateBoard = (slotIndex, piece) => {
@@ -77,7 +78,7 @@ const Game = () => {
   }
 
   //checks to see if piece is winning piece
-  function checkWin(newBoard, piece) {
+  function checkWin(newBoard, slotIndex, piece) {
       //vertical wincheck
       for(let c=0; c <= 6; c++){
         let count = 0;
@@ -87,8 +88,7 @@ const Game = () => {
               count++;
               winArray.push(c+(i* 7));
               if(count === 4){
-                console.log("win!");
-                gameReset(winArray);
+                setWin(true);
                 return;
               }
             }else{
@@ -107,8 +107,8 @@ const Game = () => {
             count++;
             winArray.push((r*7) + i);
               if(count === 4){
-                console.log("win");
-                gameReset(winArray);
+                setWin(true);
+                setWinningArray(winArray);
                 return;
               }
           }else{
@@ -126,8 +126,8 @@ const Game = () => {
               count++;
               winArray.push(d + (i*6));
                if(count === 4){
-                console.log("win")
-                gameReset(winArray);
+                setWin(true);
+                setWinningArray(winArray);
                 return;
                }
             }else{
@@ -146,8 +146,8 @@ const Game = () => {
               winArray.push((6 + d) + (6*i));
               count++;
                if(count === 4){
-                console.log("win")
-                gameReset(winArray);
+                setWin(true);
+                setWinningArray(winArray);
                 return;
                }
             }else{
@@ -166,8 +166,8 @@ const Game = () => {
             winArray.push((6-d) +(8 * i));
             count++;
              if(count === 4){
-              console.log("win")
-              gameReset(winArray);
+              setWin(true);
+              setWinningArray(winArray);
               return;
              }
           }else{
@@ -186,8 +186,8 @@ const Game = () => {
             winArray.push((8*i) - d);
             count++;
              if(count === 4){
-              console.log("win")
-              gameReset(winArray);
+              setWin(true);
+              setWinningArray(winArray);
               return;
              }
           }else{
@@ -199,7 +199,8 @@ const Game = () => {
   }
 
 
-  function gameReset() {
+  const gameReset = () => {
+      setWin(false);
       const blankBoard = [0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 
         0, 0, 0, 0, 0, 0, 0,
@@ -207,6 +208,7 @@ const Game = () => {
         0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0,];
         setBoard(blankBoard);
+        setWinningArray([]);
 
   };
   function increment() {
@@ -225,7 +227,7 @@ const Game = () => {
     
     <div className='Game'>
       <div className=''></div>
-      <Board boardArray={board} columnPosition={column} playerTurn={playerTurn}/>
+      <Board boardArray={board} columnPosition={column} playerTurn={playerTurn} win={win} gameReset={gameReset} winningArray={winningArray}/>
       <div className='bottomTab'>
       </div>
     </div>

@@ -8,7 +8,7 @@
 
 .BoardTop {
     position: absolute;
-    z-index: 1;
+    z-index: 3;
 }
 .grid{
     position: absolute;
@@ -16,7 +16,7 @@
     height:530px;
     display: flex;
     flex-wrap:wrap;
-    z-index: 0;
+    z-index: 2;
     margin-bottom: 30px;
     
 }
@@ -27,8 +27,8 @@
     border: 1px #5c2cd5 solid;
 }
 .BoardBottom{
-    z-index: -1;
-    margin-top: 10px;
+    z-index: 1;
+    margin-top: 20px;
 }
 
 .fall {
@@ -51,6 +51,38 @@
     width: 100px;
     
 }
+.win{
+    background-color: #ffffff;
+    height: 150px;
+    width: 300px;
+    z-index: 5;
+    border-radius: 25px;
+    border: 3px solid black;
+    border-bottom: 10px solid black;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position:absolute;
+    margin-top:650px;
+    
+}
+.replay {
+    background-color:var(--main-bg-color);
+    border-radius: 30px;
+    font-size: 20px;
+    width:150px;
+    height: 30px;
+    color:#ffffff;
+    font-family: connectBold;
+    cursor: pointer;
+    
+}
+
+.win >h3, h1 {
+    margin:5px;
+}
+
 @keyframes fall-animation {
     from {
         transform: translateY(-500px);
