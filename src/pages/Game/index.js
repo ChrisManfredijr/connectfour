@@ -35,7 +35,7 @@ const Game = () => {
                                       0, 0, 0, 0, 0, 0, 0,
                                       0, 0, 0, 0, 0, 0, 0,])
   const [win, setWin] = useState(false);
-  const [winningArray, setWinningArray] = ([]);
+  const [winningArray, setWinningArray] = useState([]);
   
   
   //game logic
@@ -89,6 +89,7 @@ const Game = () => {
               winArray.push(c+(i* 7));
               if(count === 4){
                 setWin(true);
+                setWinningArray(winArray);
                 return;
               }
             }else{

@@ -82,7 +82,16 @@
 .win >h3, h1 {
     margin:5px;
 }
-
+.winCircle{
+    border-radius: 100%;
+    border:10px solid #ffffff;
+    height: 30px;
+    width: 30px;
+    position: fixed;
+    z-index: 10;
+    margin-top:-73px;
+    margin-left:13px;
+}
 @keyframes fall-animation {
     from {
         transform: translateY(-500px);

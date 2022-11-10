@@ -13,17 +13,15 @@ const Board = (props) => {
     const board = props.boardArray;
     const columnNumber = props.columnPosition;
     const playerTurn = props.playerTurn;
-
+    const winningArray = props.winningArray;
     const column = [0, 1, 2, 3, 4, 5, 6,];
-
-
 
     const columnGrid = column.map((index) => {
         if (columnNumber === index) {
             if (playerTurn === 'P1') {
                 return (
                     <div className='columnSlot' key={index}>
-                        <MarkerRed />
+                        <MarkerRed/>
                     </div>
                 );
             } else if (playerTurn === 'P2') {
@@ -45,13 +43,31 @@ const Board = (props) => {
         if (slot == 1) {
             return (
                 <div className='slot' key={index}>
-                    <CounterRedLarge className='fall' />
+                    <CounterRedLarge className='fall'/>    
+                    {
+                        winningArray.map((win, i) => {
+                            if(win === index){
+                                return(
+                                    <div className='winCircle' key={i}></div>                    
+                                );       
+                            }
+                        })
+                    }   
                 </div>
             );
         } else if (slot == 2) {
             return (
                 <div className='slot' key={index}>
                     <CounterYellowLarge className='fall' />
+                    {
+                        winningArray.map((win, i) => {
+                            if(win === index){
+                                return(
+                                    <div className='winCircle' key={i}></div>                    
+                                );       
+                            }
+                        })
+                    }
                 </div>
             );
         } else {
@@ -62,7 +78,7 @@ const Board = (props) => {
             );
         };
     });
-
+   
     return (
         <div className='Board'>
             <div className='markerGrid'>{columnGrid}</div>
@@ -71,7 +87,7 @@ const Board = (props) => {
             <BoardBottom className='BoardBottom' />
             {props.win ?
                 <div className='win'>
-                    <h3>Player 1</h3>
+                    <h3>Player {playerTurn === 'P2' ? '1': '2'}</h3>
                     <h1>WINS</h1>
                     <div className="replay" onClick={props.gameReset}>PLAY AGAIN</div>
                 </div>
