@@ -6,10 +6,10 @@ const Scoreboard = (props) => {
         return (
         <div className='Scoreboard'>
             <div className='score'>
-                <PlayerOne className='playerIcon'/><h1>Player 1</h1><h3>{props.playerOneScore}</h3>
+                <PlayerOne className='playerIcon'/><h1>Player 1</h1><h1>{props.playerOneScore}</h1>
             </div>
             <div className='score'>
-                <PlayerTwo className='playerIcon'/><h1>Player 2</h1><h3>{props.playerTwoScore}</h3>
+                <PlayerTwo className='playerIcon'/><h1>Player 2</h1><h1>{props.playerTwoScore}</h1>
             </div>
         </div>
       )

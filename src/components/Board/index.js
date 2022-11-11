@@ -16,7 +16,7 @@ const Board = (props) => {
     const winningArray = props.winningArray;
     const column = [0, 1, 2, 3, 4, 5, 6,];
     
-    
+
     const columnGrid = column.map((index) => {
         if (columnNumber === index) {
             if (playerTurn === 'P1') {
@@ -93,7 +93,9 @@ const Board = (props) => {
                     <div className="replay" onClick={props.gameReset}>PLAY AGAIN</div>
                 </div>
                 : null}
-
+            
+            
+           
         </div>
     )
 }
