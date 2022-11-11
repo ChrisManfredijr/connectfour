@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import {useState} from 'react';
 import Board from '../../components/Board';
 import Navbar from '../../components/Navbar';
+import Scoreboard from '../../components/Scoreboard';
 import './index.css';
 
 const Game = () => {
@@ -37,8 +38,9 @@ const Game = () => {
                                       0, 0, 0, 0, 0, 0, 0,])
   const [win, setWin] = useState(false);
   const [winningArray, setWinningArray] = useState([]);
-  
-  
+  const [playerOneScore, setPlayerOne] = useState(0);
+  const [playerTwoScore, setPlayerTwo] = useState(0);
+
   //game logic
   function dropPiece(){
     if(win !== true){
@@ -91,6 +93,7 @@ const Game = () => {
               if(count === 4){
                 setWin(true);
                 setWinningArray(winArray);
+                setWinner(piece);
                 return;
               }
             }else{
@@ -111,6 +114,7 @@ const Game = () => {
               if(count === 4){
                 setWin(true);
                 setWinningArray(winArray);
+                setWinner(piece);
                 return;
               }
           }else{
@@ -130,6 +134,7 @@ const Game = () => {
                if(count === 4){
                 setWin(true);
                 setWinningArray(winArray);
+                setWinner(piece);
                 return;
                }
             }else{
@@ -150,6 +155,7 @@ const Game = () => {
                if(count === 4){
                 setWin(true);
                 setWinningArray(winArray);
+                setWinner(piece);
                 return;
                }
             }else{
@@ -170,6 +176,7 @@ const Game = () => {
              if(count === 4){
               setWin(true);
               setWinningArray(winArray);
+              setWinner(piece);
               return;
              }
           }else{
@@ -190,6 +197,7 @@ const Game = () => {
              if(count === 4){
               setWin(true);
               setWinningArray(winArray);
+              setWinner(piece);
               return;
              }
           }else{
@@ -200,6 +208,13 @@ const Game = () => {
       }
   }
 
+  const setWinner = (piece) => {
+    if(piece === 1){
+      setPlayerOne(score => score + 1);
+    }else if(piece === 2) {
+      setPlayerTwo(score => score + 1);
+    }
+  }
 
   const gameReset = () => {
       setWin(false);
@@ -224,12 +239,12 @@ const Game = () => {
         setColumn(prevColumn => prevColumn - 1);
       }
   };
-  
   return (
     
     <div className='Game'>
       <Navbar/>
-      <Board boardArray={board} columnPosition={column} playerTurn={playerTurn} win={win} gameReset={gameReset} winningArray={winningArray}/>
+      <Scoreboard playerOneScore={playerOneScore} playerTwoScore={playerTwoScore}/>
+      <Board boardArray={board} columnPosition={column} playerTurn={playerTurn} win={win} gameReset={gameReset} winningArray={winningArray} className="gameBoard" />
       <div className='bottomTab'>
       </div>
     </div>
