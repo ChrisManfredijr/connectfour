@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import {useState} from 'react';
 import Board from '../../components/Board';
+import Navbar from '../../components/Navbar';
 import './index.css';
 
 const Game = () => {
@@ -227,7 +228,7 @@ const Game = () => {
   return (
     
     <div className='Game'>
-      <div className=''></div>
+      <Navbar/>
       <Board boardArray={board} columnPosition={column} playerTurn={playerTurn} win={win} gameReset={gameReset} winningArray={winningArray}/>
       <div className='bottomTab'>
       </div>
