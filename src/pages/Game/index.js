@@ -282,7 +282,7 @@ const Game = () => {
       <Navbar/>
       <Scoreboard playerOneScore={playerOneScore} playerTwoScore={playerTwoScore}/>
       <Board boardArray={board} columnPosition={column} playerTurn={playerTurn} win={win} gameReset={gameReset} winningArray={winningArray} timer={timeLeft} className="gameBoard" />
-      <div className='bottomTab'>
+      <div className='bottomTab' style={ { backgroundColor: win && playerTurn === 'P2' ? '#FD6687' : win && playerTurn === 'P1' ? '#FFCE67' : '#5C2DD5'} }>
       </div>
     </div>
   )
