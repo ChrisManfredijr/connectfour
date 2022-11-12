@@ -98,10 +98,17 @@ const Board = (props) => {
                     <TurnBackgroundRed className='timer'/>
                     <div className='timerText'>
                         <h2>YOUR TURN</h2>
+                        <h1>{props.timer}S</h1>
                     </div>
                 </>   
                 : playerTurn === 'P2' ? 
-                <TurnBackgroundYellow className='timer'/> 
+                <>
+                    <TurnBackgroundYellow className='timer'/> 
+                    <div className='timerText t2'>
+                        <h2>YOUR TURN</h2>
+                        <h1>{props.timer}S</h1>
+                    </div>
+                </>
             : null}
            
             

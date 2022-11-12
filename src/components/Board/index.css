@@ -111,6 +111,9 @@
     font-family: connectMedium;
     color:#ffffff;
 }
+.t2{
+    color:black;
+}
 @keyframes fall-animation {
     from {
         transform: translateY(-500px);

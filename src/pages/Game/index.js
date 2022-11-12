@@ -6,12 +6,46 @@ import Scoreboard from '../../components/Scoreboard';
 import './index.css';
 
 const Game = () => {
- 
+  
+  const [column, setColumn] = useState(0);
+  const [playerTurn, setPlayerTurn] = useState('P1');
+  const [board, setBoard] = useState( [0, 0, 0, 0, 0, 0, 0,
+                                      0, 0, 0, 0, 0, 0, 0, 
+                                      0, 0, 0, 0, 0, 0, 0,
+                                      0, 0, 0, 0, 0, 0, 0, 
+                                      0, 0, 0, 0, 0, 0, 0,
+                                      0, 0, 0, 0, 0, 0, 0,])
+  const [win, setWin] = useState(false);
+  const [winningArray, setWinningArray] = useState([]);
+  const [playerOneScore, setPlayerOne] = useState(0);
+  const [playerTwoScore, setPlayerTwo] = useState(0);
+  const [timeLeft, setTimeLeft] = useState(30);
+  const [playerStart, setPlayerStart] = useState('P1');
+
   useEffect(() => {
-     window.addEventListener("keydown", handler)
-     gameTimer();
+    window.addEventListener("keydown", handler);
+    
+    let interval = setInterval(() => {
+      if(win === false){
+        if(timeLeft > 0){
+          setTimeLeft(seconds => seconds - 1);
+          
+        }else{
+          setWin(true);
+          if(playerTurn === 'P1'){
+            setPlayerTwo(score => score + 1);
+          }else if(playerTurn === 'P2'){
+            setPlayerOne(score => score + 1);
+          }
+          clearInterval(interval);
+        }
+      }
+      
+    }, 1000)
+    
      return () => {
-      window.removeEventListener("keydown", handler)
+      window.removeEventListener("keydown", handler);
+      clearInterval(interval);
      }
   });
 
@@ -30,22 +64,8 @@ const Game = () => {
     }
   };
 
-  const [column, setColumn] = useState(0);
-  const [playerTurn, setPlayerTurn] = useState('P1');
-  const [board, setBoard] = useState( [0, 0, 0, 0, 0, 0, 0,
-                                      0, 0, 0, 0, 0, 0, 0, 
-                                      0, 0, 0, 0, 0, 0, 0,
-                                      0, 0, 0, 0, 0, 0, 0, 
-                                      0, 0, 0, 0, 0, 0, 0,
-                                      0, 0, 0, 0, 0, 0, 0,])
-  const [win, setWin] = useState(false);
-  const [winningArray, setWinningArray] = useState([]);
-  const [playerOneScore, setPlayerOne] = useState(0);
-  const [playerTwoScore, setPlayerTwo] = useState(0);
+
   
-  function gameTimer(){
-    setInterval(() => {}, 1000);
-  }
   
   //game logic
   function dropPiece(){
@@ -53,6 +73,7 @@ const Game = () => {
       for(let i = 5; i >= 0; i--){
           if(board[(i*7) + column] === 0){
                 let slotIndex = (i*7) + column;
+                setTimeLeft(30);
                 if(playerTurn === 'P1'){
                   updateBoard(slotIndex, 1);
                   setPlayerTurn('P2');
@@ -223,7 +244,16 @@ const Game = () => {
   }
 
   const gameReset = () => {
+      if(playerStart === 'P1'){
+        setPlayerTurn('P2');
+        setPlayerStart('P2');
+      }else if(playerStart === 'P2'){
+        setPlayerTurn('P1')
+        setPlayerStart('P1');
+      }
+    
       setWin(false);
+      setTimeLeft(30);
       const blankBoard = [0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 
         0, 0, 0, 0, 0, 0, 0,
@@ -232,6 +262,7 @@ const Game = () => {
         0, 0, 0, 0, 0, 0, 0,];
         setBoard(blankBoard);
         setWinningArray([]);
+      
 
   };
   function increment() {
@@ -250,7 +281,7 @@ const Game = () => {
     <div className='Game'>
       <Navbar/>
       <Scoreboard playerOneScore={playerOneScore} playerTwoScore={playerTwoScore}/>
-      <Board boardArray={board} columnPosition={column} playerTurn={playerTurn} win={win} gameReset={gameReset} winningArray={winningArray} className="gameBoard" />
+      <Board boardArray={board} columnPosition={column} playerTurn={playerTurn} win={win} gameReset={gameReset} winningArray={winningArray} timer={timeLeft} className="gameBoard" />
       <div className='bottomTab'>
       </div>
     </div>
