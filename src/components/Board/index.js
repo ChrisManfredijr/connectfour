@@ -6,7 +6,8 @@ import { ReactComponent as CounterRedLarge } from '../../assets/images/counter-r
 import { ReactComponent as CounterYellowLarge } from '../../assets/images/counter-yellow-large.svg';
 import { ReactComponent as MarkerRed } from '../../assets/images/marker-red.svg';
 import { ReactComponent as MarkerYellow } from '../../assets/images/marker-yellow.svg';
-
+import {ReactComponent as TurnBackgroundRed} from '../../assets/images/turn-background-red.svg';
+import {ReactComponent as TurnBackgroundYellow} from '../../assets/images/turn-background-yellow.svg';
 
 
 const Board = (props) => {
@@ -92,8 +93,17 @@ const Board = (props) => {
                     <h1>WINS</h1>
                     <div className="replay" onClick={props.gameReset}>PLAY AGAIN</div>
                 </div>
-                : null}
-            
+                : playerTurn === 'P1' ? 
+                <>
+                    <TurnBackgroundRed className='timer'/>
+                    <div className='timerText'>
+                        <h2>YOUR TURN</h2>
+                    </div>
+                </>   
+                : playerTurn === 'P2' ? 
+                <TurnBackgroundYellow className='timer'/> 
+            : null}
+           
             
            
         </div>

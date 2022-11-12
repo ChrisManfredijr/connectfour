@@ -6,13 +6,15 @@ import Scoreboard from '../../components/Scoreboard';
 import './index.css';
 
 const Game = () => {
+ 
   useEffect(() => {
      window.addEventListener("keydown", handler)
-
+     gameTimer();
      return () => {
       window.removeEventListener("keydown", handler)
      }
-    })
+  });
+
   
   function handler(event) {
     switch(event.key) {
@@ -27,7 +29,7 @@ const Game = () => {
         break;
     }
   };
-  
+
   const [column, setColumn] = useState(0);
   const [playerTurn, setPlayerTurn] = useState('P1');
   const [board, setBoard] = useState( [0, 0, 0, 0, 0, 0, 0,
@@ -40,7 +42,11 @@ const Game = () => {
   const [winningArray, setWinningArray] = useState([]);
   const [playerOneScore, setPlayerOne] = useState(0);
   const [playerTwoScore, setPlayerTwo] = useState(0);
-
+  
+  function gameTimer(){
+    setInterval(() => {}, 1000);
+  }
+  
   //game logic
   function dropPiece(){
     if(win !== true){

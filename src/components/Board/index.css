@@ -97,6 +97,20 @@
     margin-top:-68px;
     margin-left:13px;
 }
+
+.timer{
+    position: absolute;
+    z-index: 10;
+    top:990px;
+
+}
+.timerText{
+    position: absolute;
+    z-index:10;
+    top:1015px;
+    font-family: connectMedium;
+    color:#ffffff;
+}
 @keyframes fall-animation {
     from {
         transform: translateY(-500px);
