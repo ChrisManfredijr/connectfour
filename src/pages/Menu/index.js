@@ -3,7 +3,7 @@ import './index.css'
 import {ReactComponent as Logo} from '../../assets/images/logo.svg'
 import {ReactComponent as Player} from '../../assets/images/player-vs-player.svg'
 import {ReactComponent as Cpu} from '../../assets/images/player-vs-cpu.svg'
-
+import { Link } from 'react-router-dom';
 const Menu = () => {
   return (
     <div className='menu'>
@@ -11,12 +11,12 @@ const Menu = () => {
             
             <Logo className='logo'/>
             <div className='menuBtnWrapper'>
-                <div className='box selectBox player'>
-                    Player vs Player <Player/>
-                </div>
-                <div className='box selectBox cpu'>
-                    Player vs CPU   <Cpu/>
-                </div>
+                <Link to="/game">
+                    <div className='box selectBox player'>
+                        Player vs Player <Player/>
+                    </div>
+                </Link>
+                
                 <div className='box selectBox rules'>
                     Game Rules
                 </div>

@@ -1,11 +1,17 @@
+import {BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom';
 import './App.css';
-import './pages/Menu';
 import Menu from './pages/Menu';
 import Game from './pages/Game';
 function App() {
   return (
     <div className="App">        
-        <Game/>
+        <Router>
+          <Routes>
+            <Route path='/' element={<Menu/>}/>
+            <Route path='/game' element={<Game/>}/>
+          </Routes>
+        </Router>
+        
     </div>
   );
 }
