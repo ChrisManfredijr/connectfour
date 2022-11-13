@@ -11,7 +11,7 @@ const Menu = () => {
             
             <Logo className='logo'/>
             <div className='menuBtnWrapper'>
-                <Link to="/game">
+                <Link to="/game" style={{textDecoration: "none", color: "inherit"}}>
                     <div className='box selectBox player'>
                         Player vs Player <Player/>
                     </div>

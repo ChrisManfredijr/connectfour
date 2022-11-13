@@ -3,14 +3,20 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color: var(--second-bg-color);
 }
-
+.logo{
+    padding:70px;
+}
 .menuBox {
     background-color: var(--main-bg-color);
     padding:30px;
-    height:600px;
-    width: 500px;
-   
+    height:435px;
+    width: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .selectBox {
@@ -20,6 +26,7 @@
     padding: 20px;
     font-size: 30px;
     font-family: connectBold;
+    width:400px;
     display: flex;
     justify-content: space-between;
     cursor:pointer;
@@ -27,7 +34,9 @@
 
 .player {
     background-color: var(--main-player-color);
+    
 }
+
 
 .cpu {
     background-color: var(--main-second-color);

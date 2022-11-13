@@ -3,6 +3,7 @@ import {useState} from 'react';
 import Board from '../../components/Board';
 import Navbar from '../../components/Navbar';
 import Scoreboard from '../../components/Scoreboard';
+import Pause from '../../components/Pause';
 import './index.css';
 
 const Game = () => {
@@ -21,12 +22,13 @@ const Game = () => {
   const [playerTwoScore, setPlayerTwo] = useState(0);
   const [timeLeft, setTimeLeft] = useState(30);
   const [playerStart, setPlayerStart] = useState('P1');
+  const [pause, setPause] = useState(true);
 
   useEffect(() => {
     window.addEventListener("keydown", handler);
     
     let interval = setInterval(() => {
-      if(win === false){
+      if(win === false && !pause){
         if(timeLeft > 0){
           setTimeLeft(seconds => seconds - 1);
           
@@ -64,7 +66,9 @@ const Game = () => {
     }
   };
 
-
+  function toggle(){
+    setPause(!pause);
+  }
   
   
   //game logic
@@ -279,10 +283,19 @@ const Game = () => {
   return (
     
     <div className='Game'>
+       {
+          pause ? 
+          <Pause/>
+          : null
+        }
       <Navbar/>
       <Scoreboard playerOneScore={playerOneScore} playerTwoScore={playerTwoScore}/>
+
       <Board boardArray={board} columnPosition={column} playerTurn={playerTurn} win={win} gameReset={gameReset} winningArray={winningArray} timer={timeLeft} className="gameBoard" />
+
       <div className='bottomTab' style={ { backgroundColor: win && playerTurn === 'P2' ? '#FD6687' : win && playerTurn === 'P1' ? '#FFCE67' : '#5C2DD5'} }>
+
+       
       </div>
     </div>
   )
