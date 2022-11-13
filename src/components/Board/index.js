@@ -9,7 +9,6 @@ import { ReactComponent as MarkerYellow } from '../../assets/images/marker-yello
 import {ReactComponent as TurnBackgroundRed} from '../../assets/images/turn-background-red.svg';
 import {ReactComponent as TurnBackgroundYellow} from '../../assets/images/turn-background-yellow.svg';
 
-
 const Board = (props) => {
     const board = props.boardArray;
     const columnNumber = props.columnPosition;

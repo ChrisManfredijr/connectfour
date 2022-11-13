@@ -15,10 +15,11 @@ const Menu = () => {
                         Player vs Player <Player/>
                     </div>
                 </Link>
-                
-                <div className='box selectBox rules'>
-                    Game Rules
-                </div>
+                <Link to ='/rules' style={{textDecoration: "none", color: "inherit"}}>
+                    <div className='box selectBox rules'>
+                        Game Rules
+                    </div>
+                </Link>
             </div>
         </div>
     </div>

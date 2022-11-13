@@ -1,0 +1,38 @@
+.Rules{
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ruleBox{
+    height:537px;
+    width:480px;
+    background-color: #ffffff;
+}
+.ruleTitle{
+    padding:10px;
+    font-size: 60px;
+    font-family: connectBold;
+}
+
+.ruleWrapper{
+    text-align: start;
+    padding-left:40px;
+    padding-right:40px;
+}
+
+.subTitle{
+    color: var(--main-bg-color);
+}
+.checkWrapper{
+    display: flex;
+    justify-content: center;
+}
+.check{
+    position: absolute;
+    top:835px;
+    cursor: pointer;
+}
+.check:hover{
+    border-color: var(--main-bg-color);
+}
