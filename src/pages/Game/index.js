@@ -26,7 +26,7 @@ const Game = () => {
 
   useEffect(() => {
     window.addEventListener("keydown", handler);
-    
+   
     let interval = setInterval(() => {
       if(win === false && !pause){
         if(timeLeft > 0){
@@ -51,6 +51,13 @@ const Game = () => {
      }
   });
 
+  
+  useEffect(() => {
+    if(pause){
+      setPause(!pause);
+    }
+    gameRestart();
+  },[])
   
   function handler(event) {
     switch(event.key) {
@@ -269,6 +276,26 @@ const Game = () => {
       
 
   };
+
+  const gameRestart = () => {
+    if(pause){
+      setPause(!pause);
+    }
+    setPlayerStart('P1');
+    setPlayerTurn('P1')
+    setPlayerOne(0);
+    setPlayerTwo(0);
+    setWin(false);
+      setTimeLeft(30);
+      const blankBoard = [0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 
+        0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0,];
+        setBoard(blankBoard);
+        setWinningArray([]);
+  }
   function increment() {
       if(column < 6){
         setColumn(prevColumn => prevColumn + 1);
@@ -285,10 +312,10 @@ const Game = () => {
     <div className='Game'>
        {
           pause ? 
-          <Pause/>
+          <Pause toggle={toggle} restart={gameRestart}/>
           : null
         }
-      <Navbar/>
+      <Navbar restart={gameRestart} toggle={toggle}/>
       <Scoreboard playerOneScore={playerOneScore} playerTwoScore={playerTwoScore}/>
 
       <Board boardArray={board} columnPosition={column} playerTurn={playerTurn} win={win} gameReset={gameReset} winningArray={winningArray} timer={timeLeft} className="gameBoard" />

@@ -1,12 +1,13 @@
 import React from 'react'
 import {ReactComponent as Logo} from '../../assets/images/logo.svg'
+
 import './index.css'
-const Navbar = () => {
+const Navbar = (props) => {
   return (
     <div className='Navbar'>
-        <div className='navButton'>MENU</div>
+        <div className='navButton' onClick ={props.toggle}>MENU</div>
             <Logo/>
-        <div className='navButton'>RESTART</div>
+        <div className='navButton' onClick={props.restart}>RESTART</div>
     
     </div>
   )
