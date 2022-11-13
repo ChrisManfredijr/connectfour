@@ -17,22 +17,30 @@ const Board = (props) => {
     const winningArray = props.winningArray;
     const column = [0, 1, 2, 3, 4, 5, 6,];
     
-
+  
+    
     const columnGrid = column.map((index) => {
-        if (columnNumber === index) {
-            if (playerTurn === 'P1') {
+        if (columnNumber === index ) {
+            if (playerTurn === 'P2' && props.start === false) {
                 return (
                     <div className='columnSlot' key={index}>
                         <MarkerRed/>
                     </div>
                 );
-            } else if (playerTurn === 'P2') {
+            } else if (playerTurn === 'P1' && props.start === false) {
                 return (
                     <div className='columnSlot' key={index}>
                         <MarkerYellow />
                     </div>
 
                 );
+            }else{
+                return (
+                    //invisible placeholder
+                    <div className='columnSlot' key={index}>
+                           <MarkerRed style={{display: "none"}}/>
+                    </div>
+                )
             }
 
         } else {
@@ -80,9 +88,17 @@ const Board = (props) => {
             );
         };
     });
-   
+    const dropGrid = column.map((col, index) => {      
+        
+        return(
+            <div className='dropColumn' onClick={() => {props.drop(col)}} key={index}>
+
+            </div>
+        )
+    })
     return (
         <div className='Board'>
+            <div className='dropGrid'>{dropGrid}</div>
             <div className='markerGrid'>{columnGrid}</div>
             <BoardTop className='BoardTop' />
             <div className='grid'>{grid}</div>

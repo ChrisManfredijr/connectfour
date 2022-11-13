@@ -23,9 +23,10 @@ const Game = () => {
   const [timeLeft, setTimeLeft] = useState(30);
   const [playerStart, setPlayerStart] = useState('P1');
   const [pause, setPause] = useState(true);
-
+  const [gameStart, setGameStart] = useState(true);
+  
   useEffect(() => {
-    window.addEventListener("keydown", handler);
+    
    
     let interval = setInterval(() => {
       if(win === false && !pause){
@@ -46,7 +47,6 @@ const Game = () => {
     }, 1000)
     
      return () => {
-      window.removeEventListener("keydown", handler);
       clearInterval(interval);
      }
   });
@@ -59,31 +59,22 @@ const Game = () => {
     gameRestart();
   },[])
   
-  function handler(event) {
-    switch(event.key) {
-      case 'ArrowDown':
-        dropPiece();
-        break;
-      case 'ArrowRight':
-        increment();
-        break;
-      case 'ArrowLeft':
-        decrement();
-        break;
-    }
-  };
-
+  
   function toggle(){
     setPause(!pause);
   }
   
+
   
   //game logic
-  function dropPiece(){
-    if(win !== true){
+  function dropPiece(col){
+    
+    if(win !== true && pause !== true){
+      setGameStart(false);
+      setColumn(col);
       for(let i = 5; i >= 0; i--){
-          if(board[(i*7) + column] === 0){
-                let slotIndex = (i*7) + column;
+          if(board[(i*7) + col] === 0){
+                let slotIndex = (i*7) + col;
                 setTimeLeft(30);
                 if(playerTurn === 'P1'){
                   updateBoard(slotIndex, 1);
@@ -96,13 +87,13 @@ const Game = () => {
                 }
                 return;
   
-            }else if(board[column] !== 0){
+            }else if(board[col] !== 0){
                 
                 return;
             }
         
         }
-
+        
     }
   }
   //updates the boards state
@@ -255,6 +246,7 @@ const Game = () => {
   }
 
   const gameReset = () => {
+      setGameStart(true);
       if(playerStart === 'P1'){
         setPlayerTurn('P2');
         setPlayerStart('P2');
@@ -281,6 +273,8 @@ const Game = () => {
     if(pause){
       setPause(!pause);
     }
+    setGameStart(true);
+    setColumn(0);
     setPlayerStart('P1');
     setPlayerTurn('P1')
     setPlayerOne(0);
@@ -296,17 +290,7 @@ const Game = () => {
         setBoard(blankBoard);
         setWinningArray([]);
   }
-  function increment() {
-      if(column < 6){
-        setColumn(prevColumn => prevColumn + 1);
-      }
-  };
 
-  function decrement() {
-      if(column > 0) {
-        setColumn(prevColumn => prevColumn - 1);
-      }
-  };
   return (
     
     <div className='Game'>
@@ -318,7 +302,7 @@ const Game = () => {
       <Navbar restart={gameRestart} toggle={toggle}/>
       <Scoreboard playerOneScore={playerOneScore} playerTwoScore={playerTwoScore}/>
 
-      <Board boardArray={board} columnPosition={column} playerTurn={playerTurn} win={win} gameReset={gameReset} winningArray={winningArray} timer={timeLeft} className="gameBoard" />
+      <Board boardArray={board} columnPosition={column} playerTurn={playerTurn} win={win} gameReset={gameReset} winningArray={winningArray} timer={timeLeft} className="gameBoard" drop={dropPiece} start={gameStart}/>
 
       <div className='bottomTab' style={ { backgroundColor: win && playerTurn === 'P2' ? '#FD6687' : win && playerTurn === 'P1' ? '#FFCE67' : '#5C2DD5'} }>
 

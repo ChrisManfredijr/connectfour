@@ -28,7 +28,7 @@
 }
 .BoardBottom{
     z-index: 1;
-    margin-top: 20px;
+    margin-top:10px;
     transform:scale(1.3);
 }
 
@@ -44,7 +44,6 @@
     position: absolute;
     width:620px;
     height:50px;
-    margin-bottom: 700px;
     top:225px;
     display: flex;
     transform:scale(1.3);
@@ -113,6 +112,22 @@
 }
 .t2{
     color:black;
+}
+
+.dropGrid{
+    position: absolute;
+    top:270px;
+    width:800px;
+    height:750px;
+    z-index: 11;
+    display: flex;
+
+}
+.dropColumn{   
+    width:110px;
+    height:750px;
+    z-index: 11;
+    cursor: pointer;
 }
 @keyframes fall-animation {
     from {
