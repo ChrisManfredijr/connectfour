@@ -16,10 +16,10 @@ const Pause = (props) => {
             <div className='box selectBox pauseText' onClick={props.restart}>
                 RESTART
             </div>
-            <Link to='/' style={{textDecoration: "none", color: 'inherit'}}>
-              <div as={Link} to='/' className='box selectBox quit'>
+            <Link to='/' style={{textDecoration: "none"}} className='box selectBox quit'>
+              
                 QUIT GAME
-              </div>
+              
             </Link>
             
        </div>
