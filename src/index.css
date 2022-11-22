@@ -26,6 +26,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--main-bg-color);
   height:100vh;
+  overflow: hidden;
 }
 
 .box {

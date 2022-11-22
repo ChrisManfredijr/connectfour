@@ -7,7 +7,7 @@
     position: absolute;
     background-color: var(--second-bg-color);
     height:300px;
-    bottom:0px;
+    bottom:0vh;
     width:100%;
     border-top-left-radius: 80px;
     border-top-right-radius: 80px;

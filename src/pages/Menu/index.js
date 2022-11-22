@@ -3,6 +3,8 @@ import './index.css'
 import {ReactComponent as Logo} from '../../assets/images/logo.svg'
 import {ReactComponent as Player} from '../../assets/images/player-vs-player.svg'
 import { Link } from 'react-router-dom';
+
+
 const Menu = () => {
   return (
     <div className='menu'>
