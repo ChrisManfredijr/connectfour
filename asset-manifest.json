@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/connectfour/static/css/main.eedfca8d.css",
-    "main.js": "/connectfour/static/js/main.82310654.js",
+    "main.js": "/connectfour/static/js/main.b45407e5.js",
     "static/media/SpaceGrotesk-VariableFont_wght.ttf": "/connectfour/static/media/SpaceGrotesk-VariableFont_wght.1036357b9651eff7d3dd.ttf",
     "static/media/SpaceGrotesk-Medium.ttf": "/connectfour/static/media/SpaceGrotesk-Medium.dff8d806ce24db6ac483.ttf",
     "static/media/SpaceGrotesk-Bold.ttf": "/connectfour/static/media/SpaceGrotesk-Bold.96e001703fcc4898de0e.ttf",
@@ -20,10 +20,10 @@
     "static/media/icon-check.svg": "/connectfour/static/media/icon-check.09edb9dc6d34aac5a1b039e28520070b.svg",
     "index.html": "/connectfour/index.html",
     "main.eedfca8d.css.map": "/connectfour/static/css/main.eedfca8d.css.map",
-    "main.82310654.js.map": "/connectfour/static/js/main.82310654.js.map"
+    "main.b45407e5.js.map": "/connectfour/static/js/main.b45407e5.js.map"
   },
   "entrypoints": [
     "static/css/main.eedfca8d.css",
-    "static/js/main.82310654.js"
+    "static/js/main.b45407e5.js"
   ]
 }
