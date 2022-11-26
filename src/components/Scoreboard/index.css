@@ -1,7 +1,7 @@
 .score{
     background-color: #ffffff;
-    height: 200px;
-    width: 175px;
+    height: 250px;
+    width: 225px;
     z-index: 5;
     border-radius: 25px;
     border: 3px solid black;
@@ -10,6 +10,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+   
    
 }
 
@@ -20,12 +21,14 @@
     justify-content: space-around;
     margin-left:auto;
     margin-right:auto;
-    margin-top:300px;
-    
+    margin-top:250px;
+  
     
 }
 
+
 .playerIcon{
     position:absolute;
-    margin-top:-200px;
+    margin-top:-250px;
 }
+

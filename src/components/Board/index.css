@@ -25,8 +25,10 @@
     height:70px;
     padding:7px;
     border: 1px var(--main-bg-color) solid;
+
 }
 .BoardBottom{
+    position: absolute;
     z-index: 1;
     margin-top:10px;
     transform:scale(1.3);
@@ -38,21 +40,24 @@
 }
 .markerRed{
     position: absolute;
-    
 }
+
+
 .markerGrid{
     position: absolute;
     width:620px;
     height:50px;
-    top:225px;
+    top:170px;
     display: flex;
+    border:1px solid blue;
     transform:scale(1.3);
     
 }
 .columnSlot{
     height:45px;
     width: 100px;
-    
+    border:solid yellow;
+   
 }
 .win{
     background-color: #ffffff;
@@ -100,13 +105,14 @@
 .timer{
     position: absolute;
     z-index: 10;
-    top:990px;
+    top:950px;
+    transform:scale(1.3);
 
 }
 .timerText{
     position: absolute;
     z-index:10;
-    top:1015px;
+    top:960px;
     font-family: connectMedium;
     color:#ffffff;
 }
@@ -116,13 +122,14 @@
 
 .dropGrid{
     position: absolute;
-    top:350px;
+    top:300px;
     width:630px;
     height:600px;
     z-index: 11;
     display: flex;
     border: 1px solid red;
     transform:scale(1.3);
+    
 
 }
 .dropColumn{   
@@ -143,30 +150,238 @@
 }
 
 @media screen and (max-width: 2080px){
-    .BoardTop {
+    .BoardTop, .grid, .BoardBottom, .markerGrid, .win, .dropGrid, .markerGrid, .win, .timer {
+        transform:scale(1);
+        
+    }
+    .BoardTop{
+        top:200px;
+    }
+    .BoardBottom{
+        top:200px;
+    }
+    .dropGrid{
+        top:200px;
         transform:scale(1);
     }
     .grid{
-        transform:scale(1);
+        top:205px;
     }
-    .BoardBottom{
-        transform:scale(1);
-    }
-    
     .markerGrid{
+        top:150px;
         transform:scale(1);
-        
+    }
+    .timer{
+        top:740px;
+    }
+    .timerText{
+        top:760px;
     }
     .win{
-        transform:scale(1);
+       margin-top: 440px;
+       
+    }
+    .score{
+        transform: scale(.8);
+        margin-top:-190px;
+    }
+   
+    
+}
+
+@media screen and (max-width: 1500px){
+    .BoardTop, .grid, .BoardBottom, .markerGrid, .win, .dropGrid, .markerGrid, .win, .timer {
+        transform:scale(.9);
         
     }
+  
     .dropGrid{
-        top:360px;
-        transform:scale(1);
+        top:200px;
+        transform:scale(.9);
+    }
+    .grid{
+        top:207px;
     }
     .markerGrid{
-        top:315px;
-        transform:scale(1);
+        top: 190px;
+        transform:scale(.9);
+    }
+    .timer{
+        top:900px;
+    }
+    .timerText{
+        top:930px;
+    }
+    .win{
+       margin-top: 400px;
+       
+    }
+    .score{
+        transform: scale(.7);
+       
+    }
+    .centeredDiv{
+        width:400px;
+    }
+}
+
+@media screen and (max-width: 1075px){
+   
+    .score{
+        margin-top:-240px;
+        height: 150px !important;
+        width:300px !important;
+        
+    }
+    .playerIcon{
+        margin-top:0px !important;
+        
+    }
+    .centeredDiv{
+        width:0px;
+    }
+    .iconOne{
+        margin-right: 300px;
+        transform: scale(1.3)
+    }
+    .iconTwo{
+        margin-left: 300px;
+        transform: scale(1.3)
+    }
+    .Navbar{
+        width:75% !important;
+    }
+}
+
+@media screen and (max-width:630px){
+    .BoardTop, .grid, .BoardBottom, .markerGrid, .win, .dropGrid, .markerGrid, .win, .timer {
+        transform:scale(.75);
+        
+    }
+
+    .score{
+        transform: scale(.70);
+        justify-content: center !important;
+    }
+    .timer{
+        top:700px;
+        transform: scale(.85);
+    }
+    .timerText{
+        top:725px;
+    }
+    .win{
+        margin-top: 460px;
+        
+     }
+     .markerGrid{
+        top:265px;
+        
+    }
+    .grid{
+        top:250px;
+    }
+    .Board{
+        margin-top: 125px;
+    }
+
+    .Navbar{
+        padding:50px 0px 0px 0px !important;
+    }
+
+    .dropGrid{
+        top:225px;
+    }
+    .iconOne{
+        margin-right: 240px;
+        transform: scale(1.3)
+    }
+    .iconTwo{
+        margin-left: 240px;
+        transform: scale(1.3)
+    }
+   
+}
+
+@media screen and (max-width: 450px){
+    .BoardTop, .grid, .BoardBottom, .markerGrid, .win, .dropGrid, .markerGrid, .win, .timer {
+        transform:scale(.55);
+        
+    }
+    .BoardTop{
+        top:102px;
+    }
+    .BoardBottom{
+        top:100px;
+    }
+    .grid{
+        top:120px !important;
+    }
+    .score{ 
+        margin-top:-275px;
+        height: 100px !important;
+        font-size: 10px;
+        
+    }
+    .timer{
+        top:500px;
+        transform: scale(.65);
+    }
+    .timerText{
+        top:545px;
+        font-size: 10px;
+    }
+    .win{
+        margin-top: 260px;
+        
+     }
+     .markerGrid{
+        top:190px;
+        
+    }
+   
+    .Navbar{
+        transform: scale(.8);
+        width: 100% !important;
+    }
+
+    .dropGrid{
+        top:100px;
+    }
+    .iconOne{
+        margin-right: 180px;
+        transform: scale(1.3)
+    }
+    .iconTwo{
+        margin-left: 180px;
+        transform: scale(1.3)
+    }
+    .bottomTab{
+        height:175px !important;
+        
+    }
+    .pauseMenu{
+        top:100px !important;
+        transform:scale(.65);
+       
+    }
+
+    .menuBox {
+        border:none;
+        
+    }
+    .menu{
+        background-color: var(--main-bg-color);
+    }
+
+    .selectBox{
+        width:300px;
+        font-size: 25px;
+        line-height: 30px;
+        padding:15px
+    }
+    .playerIconMenu{
+        transform:scale(.50);
+        
     }
 }
