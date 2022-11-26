@@ -13,12 +13,12 @@ const Rules = () => {
           <h3 className='subTitle'>OBJECTIVE</h3>
           <p>Be the first player to connect 4 of the same colored discs in a row (either vertically, horizontally, or diagonally).</p>
           <h3 className='subTitle'>HOW TO PLAY</h3>
-          <p><strong>1</strong>  &nbsp; Red goes first in the first game</p>
-          <p><strong>2</strong>  &nbsp; Players must alternate turns, and only one disc  &nbsp; &nbsp; &nbsp; &nbsp;can be dropped in each turn.  </p>
-          <p><strong>3</strong>  &nbsp; The game ends when there is a 4-in-a-row or a  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;stalemate.</p>
-          <p><strong>4</strong>   &nbsp; The starter of the previous game goes second  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; on the next game.</p>
+          <p> Red goes first in the first game</p>
+          <p> Players must alternate turns, and only one disc can be dropped in each turn.</p>
+          <p> The game ends when there is a 4-in-a-row or a stalemate.</p>
+          <p> The starter of the previous game goes second on the next game.</p>
           <div className='checkWrapper'>
-            <Link to='/' style={{paddingRight: "50px"}}>
+            <Link to='/' >
               <Checkmark className='check'/>
             </Link>
           </div>

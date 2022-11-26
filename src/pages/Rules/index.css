@@ -29,9 +29,10 @@
     justify-content: center;
 }
 .check{
-    position: absolute;
+    position: relative;
     top:835px;
     cursor: pointer;
+    
 }
 .check:hover{
     border-color: var(--main-bg-color);

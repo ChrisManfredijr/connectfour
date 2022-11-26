@@ -185,7 +185,9 @@
         transform: scale(.8);
         margin-top:-190px;
     }
-   
+    .check{
+        top:10px !important;
+    }
     
 }
 
@@ -207,103 +209,80 @@
         transform:scale(.9);
     }
     .timer{
-        top:900px;
+        top:710px;
     }
     .timerText{
-        top:930px;
+        top:730px;
     }
     .win{
        margin-top: 400px;
        
     }
     .score{
-        transform: scale(.7);
+        transform: scale(.75);
        
     }
-    .centeredDiv{
-        width:400px;
+    .Scoreboard{
+        justify-content: space-between !important;
     }
+    
+    
 }
 
-@media screen and (max-width: 1075px){
-   
+@media screen and (max-width: 1050px){
+    .BoardTop, .grid, .BoardBottom, .markerGrid, .win, .dropGrid, .markerGrid, .win, .timer {
+        transform:scale(.72);
+        
+    }
+    .BoardTop, .BoardBottom, .grid{
+        top:250px;
+    }
+    .markerGrid{
+        top:285px !important;
+    }
+    .grid{
+        top:262px;
+    }
     .score{
-        margin-top:-240px;
+        margin-top:-250px;
         height: 150px !important;
-        width:300px !important;
+        width:250px !important;
         
     }
     .playerIcon{
         margin-top:0px !important;
         
     }
-    .centeredDiv{
-        width:0px;
+    .dropGrid{
+        top:250px;
     }
     .iconOne{
-        margin-right: 300px;
-        transform: scale(1.3)
+        margin-right: 250px;
+        transform: scale(1.2)
     }
     .iconTwo{
-        margin-left: 300px;
-        transform: scale(1.3)
+        margin-left: 250px;
+        transform: scale(1.2)
     }
     .Navbar{
         width:75% !important;
     }
-}
-
-@media screen and (max-width:630px){
-    .BoardTop, .grid, .BoardBottom, .markerGrid, .win, .dropGrid, .markerGrid, .win, .timer {
-        transform:scale(.75);
-        
-    }
-
-    .score{
-        transform: scale(.70);
-        justify-content: center !important;
-    }
     .timer{
         top:700px;
-        transform: scale(.85);
+        transform: scale(.65);
     }
     .timerText{
-        top:725px;
+        top:740px;
+        font-size: 11px;
     }
-    .win{
-        margin-top: 460px;
-        
-     }
-     .markerGrid{
-        top:265px;
-        
-    }
-    .grid{
-        top:250px;
-    }
-    .Board{
-        margin-top: 125px;
-    }
-
-    .Navbar{
-        padding:50px 0px 0px 0px !important;
-    }
-
-    .dropGrid{
-        top:225px;
-    }
-    .iconOne{
-        margin-right: 240px;
-        transform: scale(1.3)
-    }
-    .iconTwo{
-        margin-left: 240px;
-        transform: scale(1.3)
+    
+    .Scoreboard{
+        justify-content: center !important;
     }
    
 }
 
-@media screen and (max-width: 450px){
+@media screen and (max-width: 455px){
     .BoardTop, .grid, .BoardBottom, .markerGrid, .win, .dropGrid, .markerGrid, .win, .timer {
         transform:scale(.55);
         
@@ -332,11 +311,11 @@
         font-size: 10px;
     }
     .win{
-        margin-top: 260px;
+        margin-top: 190px;
         
      }
      .markerGrid{
-        top:190px;
+        top:190px !important;
         
     }
    
@@ -380,8 +359,12 @@
         line-height: 30px;
         padding:15px
     }
-    .playerIconMenu{
-        transform:scale(.50);
-        
+   
+    .ruleWrapper{
+        font-size: 15px;
+    }
+
+    .check{
+        top:30px !important;
     }
 }
