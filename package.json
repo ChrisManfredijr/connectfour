@@ -2,7 +2,7 @@
   "name": "connectfour",
   "version": "0.1.0",
   "private": true,
-  "home": "http://Chrismanfredijr.github.io/connectfour",
+  "homepage": "http://Chrismanfredijr.github.io/connectfour",
 
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
