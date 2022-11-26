@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/connectfour/static/css/main.eedfca8d.css",
+    "main.js": "/connectfour/static/js/main.82310654.js",
+    "static/media/SpaceGrotesk-VariableFont_wght.ttf": "/connectfour/static/media/SpaceGrotesk-VariableFont_wght.1036357b9651eff7d3dd.ttf",
+    "static/media/SpaceGrotesk-Medium.ttf": "/connectfour/static/media/SpaceGrotesk-Medium.dff8d806ce24db6ac483.ttf",
+    "static/media/SpaceGrotesk-Bold.ttf": "/connectfour/static/media/SpaceGrotesk-Bold.96e001703fcc4898de0e.ttf",
+    "static/media/board-layer-black-large.svg": "/connectfour/static/media/board-layer-black-large.33490574022d850673c1e8c8d9a20fd2.svg",
+    "static/media/board-layer-white-large.svg": "/connectfour/static/media/board-layer-white-large.8d1e0d20b4249f8a7e07acb0c2341940.svg",
+    "static/media/player-vs-player.svg": "/connectfour/static/media/player-vs-player.0f4120171bf670fca99a7e7099d547d0.svg",
+    "static/media/logo.svg": "/connectfour/static/media/logo.18f406c1e091b7f33f727e65e6a8cf5b.svg",
+    "static/media/turn-background-red.svg": "/connectfour/static/media/turn-background-red.a17013f69456193c4ebcdcad8719a2e4.svg",
+    "static/media/counter-yellow-large.svg": "/connectfour/static/media/counter-yellow-large.f7e047b0e89b59153893ff1391a20973.svg",
+    "static/media/counter-red-large.svg": "/connectfour/static/media/counter-red-large.660c2bf877150e5a3430479adf62bb45.svg",
+    "static/media/player-two.svg": "/connectfour/static/media/player-two.3808ca69d8458efbdca19bd10962ae09.svg",
+    "static/media/turn-background-yellow.svg": "/connectfour/static/media/turn-background-yellow.542520d67124db0b4558830a9ed020d7.svg",
+    "static/media/player-one.svg": "/connectfour/static/media/player-one.dddd4c6dd39939e6572b23602ed52bf8.svg",
+    "static/media/marker-red.svg": "/connectfour/static/media/marker-red.201fc49ae1d8753513aeda6bd7021db2.svg",
+    "static/media/marker-yellow.svg": "/connectfour/static/media/marker-yellow.a8ee5c49c251b26a543fb469cccdffa8.svg",
+    "static/media/icon-check.svg": "/connectfour/static/media/icon-check.09edb9dc6d34aac5a1b039e28520070b.svg",
+    "index.html": "/connectfour/index.html",
+    "main.eedfca8d.css.map": "/connectfour/static/css/main.eedfca8d.css.map",
+    "main.82310654.js.map": "/connectfour/static/js/main.82310654.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.eedfca8d.css",
+    "static/js/main.82310654.js"
+  ]
+}
