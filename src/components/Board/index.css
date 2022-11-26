@@ -185,6 +185,9 @@
         transform: scale(.8);
         margin-top:-190px;
     }
+    .Scoreboard{
+        margin-top:350px !important;
+    }
     .check{
         top:10px !important;
     }
@@ -278,6 +281,7 @@
     
     .Scoreboard{
         justify-content: center !important;
+        margin-top: 280px !important;
     }
    
 }
