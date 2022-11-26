@@ -12,12 +12,12 @@ const Menu = () => {
             
             <Logo className='logo'/>
             <div className='menuBtnWrapper'>
-                <Link to="/game" style={{textDecoration: "none", color: "inherit"}}>
+                <Link to="/connectfour/game" style={{textDecoration: "none", color: "inherit"}}>
                     <div className='box selectBox player'>
                         Player vs Player <Player className='playerIconMenu'/>
                     </div>
                 </Link>
-                <Link to ='/rules' style={{textDecoration: "none", color: "inherit"}}>
+                <Link to ='/connectfour/rules' style={{textDecoration: "none", color: "inherit"}}>
                     <div className='box selectBox rules'>
                         Game Rules
                     </div>
