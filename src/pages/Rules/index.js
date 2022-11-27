@@ -18,7 +18,7 @@ const Rules = () => {
           <p> The game ends when there is a 4-in-a-row or a stalemate.</p>
           <p> The starter of the previous game goes second on the next game.</p>
           <div className='checkWrapper'>
-            <Link to='/connectfour/' >
+            <Link to='/' >
               <Checkmark className='check'/>
             </Link>
           </div>

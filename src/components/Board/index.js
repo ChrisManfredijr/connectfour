@@ -35,7 +35,7 @@ const Board = (props) => {
                 );
             }else{
                 return (
-                    //invisible placeholder
+                    
                     <div className='columnSlot' key={index}>
                            <MarkerRed style={{display: "none"}}/>
                     </div>
