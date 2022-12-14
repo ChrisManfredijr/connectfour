@@ -2,26 +2,32 @@
   "short_name": "Connect4",
   "name": "Connect Four",
   "description": "A connect four game built by Chris Manfredi",
-
-  "icons": [
-    {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "logo192.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "logo512.png",
-      "type": "image/png",
-      "sizes": "512x512"
-    }
-  ],
-  "start_url": ".",
+  "scope":"/",
+  "start_url": "/",
   "display": "standalone",
   "theme_color": "#5c2cd5",
-  "background_color": "#7a45ff"
+  "background_color": "#7a45ff",
+    "icons": [
+      {
+        "src":"maskable.png",
+        "sizes":"64x64",
+        "type": "image/png",
+        "purpose": "any maskable"
+      },
+      {
+        "src": "logo192.png",
+        "sizes":"192x192",
+        "type": "img/png"
+      },
+      {
+        "src": "logo512.png",
+        "sizes":"512x512",
+        "type": "img/png"
+      },
+      {
+        "src": "favicon.ico",
+        "sizes": "64x64 32x32 24x24 16x16",
+        "type": "image/x-icon"
+      }
+    ]
 }
