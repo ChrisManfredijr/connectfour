@@ -3,7 +3,7 @@
   "name": "Connect Four",
   "description": "A connect four game built by Chris Manfredi",
   "scope":"/",
-  "start_url": "/",
+  "start_url": "https://connect4-manfredi.herokuapp.com/",
   "display": "standalone",
   "theme_color": "#5c2cd5",
   "background_color": "#7a45ff",
