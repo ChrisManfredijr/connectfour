@@ -49,7 +49,7 @@ const Board = (props) => {
         }
     })
     const grid = board.map((slot, index) => {
-        if (slot == 1) {
+        if (slot === 1) {
             return (
                 <div className='slot' key={index}>
                     <CounterRedLarge className='fall'/>    
@@ -64,7 +64,7 @@ const Board = (props) => {
                     }   
                 </div>
             );
-        } else if (slot == 2) {
+        } else if (slot === 2) {
             return (
                 <div className='slot' key={index}>
                     <CounterYellowLarge className='fall' />
